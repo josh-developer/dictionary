@@ -1,6 +1,9 @@
+.mat-elevation-z8{
+  overflow: auto;
+}
 table {
-    min-width: 100%;
-    max-width: 1230px;
+
+   width: 100%;
   }
   
   .mat-form-field {
@@ -10,8 +13,11 @@ table {
   
   td, th {
     width: 25%;
+    margin: 0 15px;
   }
-
+  .bx-nn{
+    box-shadow: none !important;
+  }
   .act-td{
       width: 7% !important;
   }
