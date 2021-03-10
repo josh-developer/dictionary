@@ -39,7 +39,7 @@ export class JadvalComponent implements  OnInit,AfterViewInit {
   }
   
   getDicts(call?){
-    this.isLoading = true;
+   
     this.rusCrudService.getDicts().subscribe(res => {
       this.dicts = res;
       call()
@@ -48,6 +48,7 @@ export class JadvalComponent implements  OnInit,AfterViewInit {
   }
 
   deleteDict(id: string){
+    this.isLoading = true;
     this.rusCrudService.deleteDict(id).subscribe(res=>{
       this.getDicts(()=>{
          this.dataSource = new MatTableDataSource(this.dicts);

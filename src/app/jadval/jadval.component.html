@@ -28,17 +28,21 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="act-td"> Harakatlar </th>
         <td mat-cell *matCellDef="let row" class="act-td"> 
-            <button mat-raised-button color="warn" class="custom-btn" (click)="deleteDict(row.id)">
-                O'chirish
+            <button mat-icon-button color="warn" class="custom-btn" (click)="deleteDict(row.id)">
+                <mat-icon>
+                  delete_outline
+                </mat-icon>
             </button>  
             <button 
-                mat-raised-button 
+                mat-icon-button 
                 color="primary" 
                 class="custom-btn"
                 (click)="onEdit(row.id)"
               
                 >
-                O'zgartirish
+                <mat-icon>
+                  edit
+                </mat-icon>
             </button>  
         </td>
       </ng-container>

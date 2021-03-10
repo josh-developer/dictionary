@@ -21,6 +21,8 @@ import { AddComponent } from './add/add.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     MatPaginatorModule,
     MatFormFieldModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
   ],
   providers: [],

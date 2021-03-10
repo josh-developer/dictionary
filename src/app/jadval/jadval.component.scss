@@ -1,5 +1,6 @@
 table {
-    width: 100%;
+    min-width: 100%;
+    max-width: 1230px;
   }
   
   .mat-form-field {
@@ -12,6 +13,6 @@ table {
   }
 
   .act-td{
-      width: 15% !important;
+      width: 7% !important;
   }
   
