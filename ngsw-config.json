@@ -12,6 +12,10 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+       
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Material+Icons"
         ]
       }
     },
@@ -24,6 +28,7 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+       
       }
     }
       
