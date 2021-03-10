@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.custom-btn{
+    margin-left: 5px !important; 
+    margin-right: 5px !important; 
+}
+
+.bg-transparent{
+    background: transparent !important;
+}
+
+.link-active{
+    background-color: rgba(255,255,255,0.7) !important;
+}
+
+app-loader{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

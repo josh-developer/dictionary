@@ -1,0 +1,57 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<ng-container *ngIf="!isLoading">
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+           
+      <ng-container matColumnDef="rus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="act-td"> Ruscha </th>
+        <td mat-cell *matCellDef="let row" class="act-td"> {{row.rus}} </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="uz">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="act-td"> O'zbekcha </th>
+        <td mat-cell *matCellDef="let row" class="act-td"> {{row.uz}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="desc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Izoh </th>
+        <td mat-cell *matCellDef="let row"> {{row.desc}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="act-td"> Harakatlar </th>
+        <td mat-cell *matCellDef="let row" class="act-td"> 
+            <button mat-raised-button color="warn" class="custom-btn" (click)="deleteDict(row.id)">
+                O'chirish
+            </button>  
+            <button 
+                mat-raised-button 
+                color="primary" 
+                class="custom-btn"
+                (click)="onEdit(row.id)"
+              
+                >
+                O'zgartirish
+            </button>  
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+     
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+  </div>
+</ng-container>
