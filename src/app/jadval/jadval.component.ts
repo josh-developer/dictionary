@@ -12,7 +12,7 @@ import { Dict, RusCrudService } from '../services/rus-crud.service';
   templateUrl: 'jadval.component.html',
 })
 export class JadvalComponent implements  OnInit,AfterViewInit {
-  displayedColumns: string[] = [ 'rus', 'uz', 'desc', "actions"];
+  displayedColumns: string[] = [ 'rus', 'uz', "actions"];
   dataSource: MatTableDataSource<Dict>;
   dicts: Dict[];
   @ViewChild(MatPaginator, {static: false}) set paginator(value: MatPaginator) {

@@ -1,22 +1,22 @@
+
+
 <div class="form-box" (ngSubmit)="submit()" [formGroup]="form">
     <form class="example-form">
         <mat-form-field appearance="fill" class="example-full-width">
           <mat-label>Ruscha so'z</mat-label>
-          <input matInput placeholder="Rus..." formControlName="rus">
+          <input matInput placeholder="слово1, слово2, слово3..." formControlName="rus">
         </mat-form-field>
     
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>O'zbekcha so'z</mat-label>
-            <input matInput placeholder="Uz..." formControlName="uz">
+            <input matInput placeholder="1-so'z, 2-so'z, 3-so'z..." formControlName="uz">
           </mat-form-field>
       
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Izoh...</mat-label>
-          <textarea matInput placeholder="Izoh qoldirish..." rows="6" formControlName="desc"></textarea>
-        </mat-form-field>
+      
         <br>
         <button mat-raised-button color="primary">
             {{ isEditMode ? "O'zgartirish": "Qo'shish" }}
         </button>
       </form>
 </div>
+

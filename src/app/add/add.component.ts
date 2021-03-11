@@ -40,18 +40,18 @@ export class AddComponent implements OnInit, OnDestroy{
     if(this.isEditMode && this.editedDict){
       this.form = new FormGroup({
         rus: new FormControl(this.editedDict.rus, [Validators.required, Validators.minLength(2)]),
-        uz: new FormControl(this.editedDict.uz, [Validators.required, Validators.minLength(2)]),
-        desc: new FormControl(this.editedDict.desc)
+        uz: new FormControl(this.editedDict.uz, [Validators.required, Validators.minLength(2)])
+       
       })
     }else{
       this.form = new FormGroup({
         rus: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-        uz: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-        desc: new FormControl(null)
+        uz: new FormControl(null, [Validators.required, Validators.minLength(2)])
       })
     }
     
   }
+
 
   submit() {
     if (!this.form.valid) {
@@ -64,9 +64,26 @@ export class AddComponent implements OnInit, OnDestroy{
         });
         
       }else{
-        this.rusCrudService.addDict(this.form.value).subscribe(res => {
-          this.router.navigate(["/jadval"])
-        });  
+        let val = this.form.value;          
+        let arr = [];
+        let rus = val.rus.split(",");
+        let uz = val.uz.split(",");
+        
+        for(let i = 0; i < rus.length; i++){
+          arr.push({rus: rus[i],uz: uz[i] });
+        }
+        console.log(arr)
+          arr.forEach((value)=> {         
+          this.rusCrudService.addDict(
+            value
+           ).subscribe(res => {
+             if(arr.indexOf(value) === arr.length-1){
+               console.log("oxirgi loop: " , value)
+               this.router.navigate(["/jadval"])
+           }
+           })
+         })
+        
       }
       
       this.form.reset();

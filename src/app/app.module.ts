@@ -11,7 +11,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input"
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 import { JadvalComponent } from './jadval/jadval.component';
@@ -46,6 +46,7 @@ import { environment } from '../environments/environment';
     MatFormFieldModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
   ],

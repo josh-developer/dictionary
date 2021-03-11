@@ -7,7 +7,6 @@ export interface Dict{
   id?: string;
   rus: string;
   uz: string;
-  desc: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -22,6 +21,7 @@ export class RusCrudService {
   addDict(value: Dict){
    return this.http.post("https://rus-uz-default-rtdb.firebaseio.com/dicts.json", value);
   }
+  
 
   getDicts(){
     return this.http.get("https://rus-uz-default-rtdb.firebaseio.com/dicts.json") 
