@@ -58,7 +58,7 @@ export class AddComponent implements OnInit, OnDestroy{
       return;
     } else {
       if(this.isEditMode && this.editedDict){
-        this.rusCrudService.editDict(this.editedDict.id, this.form.value).subscribe(()=>{
+        this.rusCrudService.editDict(this.editedDict.id, this.form.value).subscribe((res)=>{
           this.router.navigate(["/jadval"])
      
         });
